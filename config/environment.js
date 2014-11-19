@@ -42,6 +42,16 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:token'
+  };
+  ENV['simple-auth-token'] = {
+    serverTokenEndpoint: 'http://bandaid.com/app_dev.php/login_check',
+    identificationField: '_username',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization'
+  };
 
   return ENV;
 };
