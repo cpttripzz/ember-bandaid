@@ -1,0 +1,10 @@
+<script type="text/x-handlebars" id="index">
+    {{log controller}}
+{{#each homeitem in controller.model}}
+    {{debugger}}
+    {{log this}}
+    {{homeitem.name}}
+{{else}}
+    fuck off
+{{/each}}
+</script>

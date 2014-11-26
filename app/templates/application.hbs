@@ -1,3 +1,103 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+            {{#link-to 'index' tagName='li' activeClass='active'}}
+                {{#link-to 'index'}}
+                  <span class="fa fa-home">Home</span>
+                {{/link-to}}
+            {{/link-to}}
+        </li>
+        <li>
+          <a href="musician"><span class="fa fa-music">Musicians</span></a>
+        </li>
+        <li>
+          <a href="band"><span class="fa fa-group">Bands</span></a>
+        </li>
+      </ul>
+{{#if session.isAuthenticated}}
 
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+          class="glyphicon glyphicon-user"></span>{{session.username}} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+
+          <li><a {{ action 'invalidateSession' }} ><span class="fa fa-sign-out"></span>Logout</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+{{else}}
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <a href="#" data-toggle="modal" data-target="#myModal">Login<span class="caret"></span></a>
+        </ul>
+      </div>
+{{/if}}
+
+      <!-- /.navbar-collapse --><!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                  class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Login to Bandaid</h4>
+            </div>
+            <div class="modal-body">
+
+              <form {{action 'authenticate' on='submit'}}>
+                <label for="identification">Login</label>
+                {{input id='identification' placeholder='Enter Login' value=identification}}
+                <label for="_password">Password</label>
+                {{input id='_password' placeholder='Enter Password' type='password' value=password}}
+                <label for="remember_me"> <input type="checkbox" id="remember_me" name="_remember_me" value="on"> Remember
+                    Me </label>
+
+
+                <p class="text-right">
+                  <a class="btn btn-facebook btn-width-200" id="btn-register">Register</a>
+                </p>
+                <p class="text-right">
+                  <a href="#">Forgot password?</a>
+                </p>
+                <div id="btn-facebook" class="btn btn-facebook btn-width-200">
+                  <i class="fa fa-facebook"></i>
+                  | Connect with Facebook
+                </div>
+                <div id="btn-google-plus" class="btn btn-google-plus btn-width-200">
+                  <i class="fa fa-google-plus"></i>
+                  | Connect with Google +
+                </div>
+                <div id="btn-twiter" class="btn btn-twitter btn-width-200">
+                  <i class="fa fa-twitter"></i>
+                  | Connect with Twitter
+                </div>
+                <div id="btn-github" class="btn btn-github btn-width-200">
+                  <i class="fa fa-github"></i>
+                  | Connect with Github
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+              </form>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
 {{outlet}}
