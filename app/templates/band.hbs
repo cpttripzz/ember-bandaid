@@ -12,14 +12,7 @@
           <div class="association-info">
             <ul>
               <li class="association-project-name">{{band.name}}</li>
-              <div class="text-left ">Genres:
-                {{#each genre in band.genres}}
-                    <span class="genre">{{genre.name}}
-                      <img src="http://bandaid.com/media/cache/thumb/img/genres/{{genre.slug}}
-                    </span>
-
-              </div>
-                {{/each}}
+              {{partial 'partial-genre'}}
               <div class="float-left text-left">Locations: <a href="/app_dev.php/musician/36">
                 <img class="flag" src="/img/flags/us.png">
               </a>
@@ -40,33 +33,3 @@
     {{/each}}
   </div>
 </script>
-
-
-  <div class="navigation">
-    <ul class="pagination">
-      <li class="disabled">
-        <span>«&nbsp;Previous</span>
-      </li>
-      <li class="active">
-        <span>1</span>
-      </li>
-      <li>
-        <a href="/app_dev.php/musician?page=2">2</a>
-      </li>
-      <li>
-        <a href="/app_dev.php/musician?page=3">3</a>
-      </li>
-      <li>
-        <a href="/app_dev.php/musician?page=4">4</a>
-      </li>
-      <li>
-        <a href="/app_dev.php/musician?page=5">5</a>
-      </li>
-      <li>
-        <a href="/app_dev.php/musician?page=6">6</a>
-      </li>
-      <li>
-        <a href="/app_dev.php/musician?page=2">Next&nbsp;»</a>
-      </li>
-    </ul>
-  </div>

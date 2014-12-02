@@ -1,0 +1,8 @@
+<div class="text-left ">Genres:
+{{#each genre in band.genres}}
+<span class="genre">{{genre.name}}
+<img {{bindAttr src="genre.genreImgUrl"}} />
+</span>
+
+</div>
+{{/each}}
