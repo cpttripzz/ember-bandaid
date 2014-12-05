@@ -6,7 +6,6 @@ export default DS.Model.extend({
     slug: DS.attr('string'),
     genreImgUrl: function() {
         return this.const.path +'/media/cache/thumb/img/genres/' + this.get('slug') + '.jpg';
-
     }.property('src')
 });
 

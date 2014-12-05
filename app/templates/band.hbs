@@ -1,35 +1,42 @@
-<script type="text/x-handlebars" id="band">
-  <div class="row multi-columns-row ">
-    {{#each band in controller.model}}
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-        <div class="association-item">
-          <div class="association-image">
-            <a href="/musician/{{band.slug}}/show">
-              <img src="http://bandaid.com/img/users/20024815aaa03fa01ab73629fb43c2f57d9280cd.jpeg" alt="">
-            </a>
-          </div>
-          <div class="association-info">
-            <ul>
-              <li class="association-project-name">{{band.name}}</li>
-              {{partial 'partial-genre'}}
-              <div class="float-left text-left">Locations: <a href="/app_dev.php/musician/36">
-                <img class="flag" src="/img/flags/us.png">
-              </a>
-              </div>
-              <p></p>
-              <div class="text-left ">Instruments:<span class="instrument">Saxophone
+
+
+{{#each band in controller.model}}
+  {{#if band.first}}
+    <div class="row row-xs-height">
+  {{/if}}
+
+
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xs-height ">
+      <div class="association-item">
+        <div class="association-image">
+          <a href="">
+            <img {{bind-attr  src="band.bandImgUrl"}} />
+          </a>
+        </div>
+        <div class="association-info">
+          <ul>
+            <li class="association-project-name">{{band.name}}</li>
+            {{partial 'partial-genre'}}
+
+            <div >Instruments:<span class="instrument">Saxophone
                         <img src="http://bandaid.com/media/cache/thumb/img/instruments/saxophone.png">
                     </span>
-              </div>
-              <p></p>
-              <li class="read-more"><a href="/app_dev.php/musician/quasi-maxime-quasi/show" class="btn">Read more</a></li>
-            </ul>
-          </div>
+            </div>
+            <p></p>
+            <li class="read-more"><a href="/app_dev.php/musician/quasi-maxime-quasi/show" class="btn">Read more</a></li>
+          </ul>
         </div>
       </div>
-    {{else}}
-      NOPE
-    {{/each}}
-  </div>
-</script>
+    </div>
+  {{#if band.lastOfRow}}
+    </div>
+    <div class="row row-xs-height">
+  {{/if}}
+  {{#if band.last}}
+    </div>
+  {{/if}}
+{{else}}
+  NOPE
+{{/each}}
+

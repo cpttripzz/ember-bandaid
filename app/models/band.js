@@ -8,7 +8,11 @@ export default DS.Model.extend({
     updatedAt: DS.attr('string'),
     type: DS.attr('string'),
     genres: DS.hasMany('genres'),
-    documents: DS.hasMany('documents')
+    documents: DS.hasMany('documents'),
+    bandImgUrl: function() {
+        return this.const.path +'/img/users/' + this.get('documents').content.objectAt(0)._data.path;
+    }.property('src')
+
 
 });
 
