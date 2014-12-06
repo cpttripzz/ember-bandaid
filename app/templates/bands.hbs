@@ -1,0 +1,24 @@
+{{#each band in controller.model}}
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xs-height ">
+      <div class="association-item">
+        <div class="association-image">
+          {{#link-to 'band' band.slug}}
+            <img {{bind-attr src="band.bandImgUrl"}} />
+          {{/link-to}}
+        </div>
+        <div class="association-info">
+          <ul>
+            <li class="association-project-name">{{band.name}}</li>
+            {{render 'partial-genre-panel'  band.genres}}
+            {{render 'partial-address-panel' band.addresses}}
+            <br/>
+            <li class="read-more">{{#link-to 'band' band.slug className='btn'}}Read More{{/link-to}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+{{else}}
+  NOPE
+{{/each}}
+
+

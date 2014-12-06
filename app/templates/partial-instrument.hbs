@@ -1,0 +1,13 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">Instruments</div>
+  <div class="panel-body">
+      {{#each instrument in this}}
+        <div >:<span class="instrument">Saxophone
+                        <img src="http://musicianaid.com/media/cache/thumb/img/instruments/saxophone.png">
+                    </span>
+        </div>
+        <span class="instrument">{{instrument.name}}<img {{bind-attr  src="instrument.instrumentImgUrl"}} /></span>
+      {{/each}}
+  </div>
+</div>

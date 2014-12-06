@@ -1,0 +1,9 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">Genres</div>
+  <div class="panel-body">
+      {{#each genre in this}}
+        <span class="genre">{{genre.name}}<img {{bind-attr  src="genre.genreImgUrl"}} /></span>
+      {{/each}}
+  </div>
+</div>

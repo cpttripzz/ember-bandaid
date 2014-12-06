@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Locations</div>
+  <div class="panel-body">
+      {{#each address in this}}
+          {{address.countryName}} <img {{bind-attr  src="address.addressImgUrl"}} />
+      {{/each}}
+  </div>
+</div>

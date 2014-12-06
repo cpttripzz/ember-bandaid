@@ -1,0 +1,37 @@
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Musicians Associated With:</div>
+  <div class="panel-body">
+        {{#each musician in this}}
+          <p></p>
+          <div class="panel ">
+            <div class="col-sm-4 col-md-4">
+              <div class="assoc-image">
+                  {{#link-to 'musician' musician.slug}}
+                    <img {{bind-attr src="musician.musicianSmallImgUrl"}} />
+                  {{/link-to}}
+              </div>
+            </div>
+            <div class="col-sm-8 col-md-8 assoc-text">
+              <h3>{{musician.name}}</h3>
+
+              <p>{{musician.description}}</p>
+              <p></p>
+                {{render 'partial-genre' musician.genres}}
+                {{render 'partial-address' musician.addresses}}
+            </div>
+          </div>
+
+
+
+
+
+        {{else}}
+          NOPE
+        {{/each}}
+
+
+    </div>
+</div>

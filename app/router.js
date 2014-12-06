@@ -13,7 +13,9 @@ Router.map(function() {
   this.route('home');
   this.route('genre');
   this.resource('homeitem');
-  this.resource('band');
+  this.resource('bands');
+  this.resource('band', { path: '/band/:band_slug' });
+  this.resource('musician',{path: '/musician/:musician_slug' });
 });
 // make this route protected
 Ember.ProtectedRoute = Ember.Route.extend(AuthenticatedRouteMixin);

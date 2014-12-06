@@ -15,7 +15,7 @@
           <a href="musician"><span class="fa fa-music">Musicians</span></a>
         </li>
         <li>
-          <a href="band"><span class="fa fa-group">Bands</span></a>
+          {{#link-to 'bands'}}<span class="fa fa-group">Bands</span>{{/link-to}}
         </li>
       </ul>
 {{#if session.isAuthenticated}}

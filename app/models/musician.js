@@ -1,5 +1,4 @@
 import DS from "ember-data";
-import Ember from 'ember';
 
 export default DS.Model.extend({
     name: DS.attr('string'),
@@ -11,13 +10,12 @@ export default DS.Model.extend({
     genres: DS.hasMany('genres'),
     addresses: DS.hasMany('addresses'),
     documents: DS.hasMany('documents'),
-    musicians: DS.hasMany('musicians'),
-    bandImgUrl: function() {
-        var docPath ='6d319191fe4df512760df8e65402468130ff6b8f.jpeg';
-        if(Ember.typeOf(this.get('documents').objectAt(0)) != 'undefined') {
-            docPath = this.get('documents').content.objectAt(0)._data.path;
-        }
-        return this.const.path +'/img/users/' + docPath;
+    instruments: DS.hasMany('instruments'),
+    musicianImgUrl: function() {
+        return this.const.path +'/img/users/' + this.get('documents').content.objectAt(0)._data.path;
+    }.property('src'),
+    musicianSmallImgUrl: function() {
+        return this.const.path +'/media/cache/resolve/assoc/img/users/' + this.get('documents').content.objectAt(0)._data.path;
     }.property('src')
 
 

@@ -1,0 +1,5 @@
+<div class="float-left text-left">Locations:
+    {{#each address in this}}
+        {{address.displayName}}<img {{bind-attr  src="address.addressImgUrl"}} />
+    {{/each}}
+</div>
