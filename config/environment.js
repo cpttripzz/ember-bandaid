@@ -52,11 +52,12 @@ module.exports = function(environment) {
 
   }
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:token'
+    authorizer: 'simple-auth-authorizer:token',
+    crossOriginWhitelist: ['http://bandaid.com']
   };
   ENV['simple-auth-token'] = {
-    serverTokenEndpoint: 'http://bandaid.com/app_dev.php/login_check',
-    identificationField: '_username',
+    serverTokenEndpoint: 'http://bandaid.com/app_dev.php/api/open/getToken',
+    identificationField: 'username',
     tokenPropertyName: 'token',
     authorizationPrefix: 'Bearer ',
     authorizationHeaderName: 'Authorization'

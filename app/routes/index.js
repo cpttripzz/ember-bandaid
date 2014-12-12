@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model: function() {
-        return this.store.find('homeitem');
+        return this.store.find('homeitem', 'slug');
     }
 });

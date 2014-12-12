@@ -2,7 +2,7 @@ import DS from "ember-data";
 import Ember from 'ember';
 var ApplicationAdapter = DS.RESTAdapter.extend({
     host: 'http://bandaid.com/app_dev.php',
-    namespace: 'api'
+    namespace: 'api/secure'
 });
 
 var inflector = Ember.Inflector.inflector;

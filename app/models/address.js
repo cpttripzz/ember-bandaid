@@ -12,7 +12,7 @@ export default DS.Model.extend({
     regions: DS.hasMany('regions'),
     addressImgUrl: function() {
         var countryCode = 'us';
-        if(Ember.typeOf(this.get('countries').objectAt(0))!= 'undefined')
+        if(Ember.typeOf(this.get('countries').objectAt(0))!== 'undefined')
         {
             countryCode = this.get('countries').objectAt(0)._data.code.toLowerCase();
 
@@ -24,7 +24,7 @@ export default DS.Model.extend({
         var regionName = '';
         var countryName = '';
         var cityName = '';
-        if(Ember.typeOf(this.get('regions').objectAt(0)) != 'undefined') {
+        if(Ember.typeOf(this.get('regions').objectAt(0)) !== 'undefined') {
             if(this.get('regions').objectAt(0)._data.longName !== '')
             {
                 regionName = this.get('regions').objectAt(0)._data.longName;
@@ -32,12 +32,12 @@ export default DS.Model.extend({
                 regionName = this.get('regions').objectAt(0)._data.shortName;
             }
         }
-        if(Ember.typeOf(this.get('countries').objectAt(0))!= 'undefined')
+        if(Ember.typeOf(this.get('countries').objectAt(0))!== 'undefined')
         {
             countryName = this.get('countries').objectAt(0)._data.name;
         }
 
-        if(Ember.typeOf(this.get('cities').objectAt(0))!= 'undefined') {
+        if(Ember.typeOf(this.get('cities').objectAt(0))!== 'undefined') {
             cityName = this.get('cities').objectAt(0)._data.name;
         }
         if(regionName){
@@ -50,7 +50,7 @@ export default DS.Model.extend({
     countryName: function() {
         var countryName = '';
 
-        if(Ember.typeOf(this.get('countries').objectAt(0))!= 'undefined')
+        if(Ember.typeOf(this.get('countries').objectAt(0))!== 'undefined')
         {
             countryName = this.get('countries').objectAt(0)._data.name;
         }

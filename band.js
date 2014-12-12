@@ -1,11 +1,10 @@
 import DS from "ember-data";
 
-var BandAdapter = DS.RESTAdapter.extend({
-    host: 'http://bandaid.com/app_dev.php',
-    namespace: 'api',
+var UserItemsAdapter = DS.RESTAdapter.extend({
     findAll: function(store,type,id){
-        return this.ajax('http://bandaid.com/app_dev.php/api/homeitems','GET');
+        var userBands = this.ajax('http://bandaid.com/app_dev.php/api/user/bands','GET');
+        return userBands;
     }
 });
 
-export default BandAdapter;
+export default UserItemsAdapter;
