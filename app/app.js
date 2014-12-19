@@ -13,10 +13,7 @@ var App = Ember.Application.extend({
 });
 
 App.Constant = Ember.Object.extend({
-
     path: 'http://bandaid.com'
-
-
 });
 
 

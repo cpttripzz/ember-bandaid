@@ -1,10 +1,9 @@
-import DS from "ember-data";
+import Ember from 'ember';
 
-var UserItemsAdapter = DS.RESTAdapter.extend({
-    findAll: function(store,type,id){
-        var userBands = this.ajax('http://bandaid.com/app_dev.php/api/user/bands','GET');
-        return userBands;
-    }
+export default Ember.View.extend({
+    layoutName: 'band',
+    isEditable: function() {
+        var userId =this.get('session.userId');
+        return this.get('userId') === userId;
+    }.property('userId')
 });
-
-export default UserItemsAdapter;

@@ -12,7 +12,10 @@ export default DS.Model.extend({
     addresses: DS.hasMany('addresses'),
     documents: DS.hasMany('documents'),
     musicians: DS.hasMany('musicians'),
+    userId: DS.attr('number'),
+    useritems: DS.belongsTo('useritem'),
     bandImgUrl: function() {
+
         var docPath ='6d319191fe4df512760df8e65402468130ff6b8f.jpeg';
         if(Ember.typeOf(this.get('documents').objectAt(0)) != 'undefined') {
             docPath = this.get('documents').content.objectAt(0)._data.path;

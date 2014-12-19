@@ -1,18 +1,22 @@
-{{#each band in this.model}}
+{{#each itemController='band' }}
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xs-height ">
     <div class="association-item">
       <div class="association-image">
-          {{#link-to 'band' band.slug}}
-            <img {{bind-attr src="band.bandImgUrl"}} />
+          {{#link-to 'band' this.slug}}
+            <img {{bind-attr src="this.bandImgUrl"}} />
           {{/link-to}}
       </div>
+      {{#if this.isEditable}}
+        <h1>yo</h1>
+      {{/if}}
       <div class="association-info">
         <ul>
-          <li class="association-project-name">{{band.name}}</li>
-            {{render 'partial-genre-panel'  band.genres}}
-            {{render 'partial-address-panel' band.addresses}}
+          <li class="association-project-name">{{this.name}}</li>
+            {{render 'partial-genre-panel'  this.genres}}
+            {{render 'partial-address-panel' this.addresses}}
           <br/>
-          <li class="read-more">{{#link-to 'band' band.slug className='btn'}}Read More{{/link-to}}</li>
+
+          <li class="read-more">{{#link-to 'band' this.slug className='btn'}}Read More{{/link-to}}</li>
         </ul>
       </div>
     </div>
