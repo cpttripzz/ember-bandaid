@@ -14,11 +14,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' bandaid.com maxcdn.bootstrapcdn.com ",
-      'font-src': "'self' 'unsafe-inline' bandaid.com maxcdn.bootstrapcdn.com ",
-      'connect-src': "'self' 'unsafe-inline' bandaid.com ",
-      'img-src': "'self' 'unsafe-inline' bandaid.com maxcdn.bootstrapcdn.com",
-      'style-src': "'self' 'unsafe-inline' bandaid.com maxcdn.bootstrapcdn.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' bandaid-api.com maxcdn.bootstrapcdn.com ",
+      'font-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com ",
+      'connect-src': "'self' 'unsafe-inline' bandaid-api.com ",
+      'img-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com",
+      'style-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com",
       'report-uri': "'test"
     },
 
@@ -53,10 +53,10 @@ module.exports = function(environment) {
   }
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:token',
-    crossOriginWhitelist: ['http://bandaid.com']
+    crossOriginWhitelist: ['http://bandaid-api.com']
   };
   ENV['simple-auth-token'] = {
-    serverTokenEndpoint: 'http://bandaid.com/app_dev.php/api/open/getToken',
+    serverTokenEndpoint: 'http://bandaid-api.com/app_dev.php/api/open/getToken',
     identificationField: 'username',
     tokenPropertyName: 'token',
     authorizationPrefix: 'Bearer ',

@@ -1,13 +1,7 @@
 import Ember from 'ember';
 export default Ember.ObjectController.extend({
+    needs: ['band'],
     actions: {
-        save: function(){
-            debugger;
-            var band = this.get('model');
-            // this will tell Ember-Data to save/persist the new record
-            band.save();
-            this.transitionToRoute('band', band);
-        },
         bandSave: function(){
             var band = this.get('model');
             // this will tell Ember-Data to save/persist the new record

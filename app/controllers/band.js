@@ -10,7 +10,7 @@ Ember.ObjectController.extend({
     actions: {
         bandEdit: function () {
             var slug = this.get('slug');
-            this.transitionToRoute('band.edit', {band_slug: slug});
+            this.transitionToRoute('band.edit', this.model);
         }
 
     }

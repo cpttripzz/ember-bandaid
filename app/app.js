@@ -9,11 +9,11 @@ var App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver: Resolver,
-  apiPath: 'http://bandaid.com'
+  apiPath: 'http://bandaid-api.com'
 });
 
 App.Constant = Ember.Object.extend({
-    path: 'http://bandaid.com'
+    path: 'http://bandaid-api.com'
 });
 
 
