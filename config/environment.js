@@ -14,11 +14,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-      'font-src': "'self' 'unsafe-inline'",
-      'connect-src': "'self' 'unsafe-inline'",
-      'img-src': "'self' 'unsafe-inline'",
-      'style-src': "'self' 'unsafe-inline'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' bandaid.com maxcdn.bootstrapcdn.com ",
+      'font-src': "'self' 'unsafe-inline' bandaid.com maxcdn.bootstrapcdn.com ",
+      'connect-src': "'self' 'unsafe-inline' bandaid.com ",
+      'img-src': "'self' 'unsafe-inline' bandaid.com maxcdn.bootstrapcdn.com",
+      'style-src': "'self' 'unsafe-inline' bandaid.com maxcdn.bootstrapcdn.com",
       'report-uri': "'test"
     },
 

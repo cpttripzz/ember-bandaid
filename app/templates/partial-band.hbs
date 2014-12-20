@@ -6,9 +6,6 @@
             <img {{bind-attr src="this.bandImgUrl"}} />
           {{/link-to}}
       </div>
-      {{#if this.isEditable}}
-        <h1>yo</h1>
-      {{/if}}
       <div class="association-info">
         <ul>
           <li class="association-project-name">{{this.name}}</li>
@@ -16,7 +13,13 @@
             {{render 'partial-address-panel' this.addresses}}
           <br/>
 
-          <li class="read-more">{{#link-to 'band' this.slug className='btn'}}Read More{{/link-to}}</li>
+          {{#if this.isEditable}}
+            <button {{action "bandEdit"}}>Edit</button>
+            <li class="read-more">{{#link-to 'band.edit' this.slug className='btn'}}Read More{{/link-to}}</li>
+            {{else}}
+            <li class="read-more">{{#link-to 'band' this.slug className='btn'}}Read More{{/link-to}}</li>
+          {{/if}}
+
         </ul>
       </div>
     </div>
