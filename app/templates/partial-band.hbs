@@ -14,7 +14,7 @@
           <br/>
 
           {{#if this.isEditable}}
-            <button {{action "bandEdit"}}>Edit</button>
+            <button {{action "bandEdit" this.slug}}>Edit</button>
             <li class="read-more">{{#link-to 'band.edit' this.slug className='btn'}}Read More{{/link-to}}</li>
             {{else}}
             <li class="read-more">{{#link-to 'band' this.slug className='btn'}}Read More{{/link-to}}</li>

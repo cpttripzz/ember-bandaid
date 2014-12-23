@@ -15,7 +15,7 @@ Router.map(function() {
   this.resource('homeitem', { path: '/homeitem/:user_slug' });
   this.resource('bands');
   this.resource('band', { path: '/band/:band_slug' });
-  this.route('band.edit', {path: '/band/:band_slug/edit' });
+  this.resource('band.edit', {path: '/band/:band_slug/edit' });
   this.resource('musician',{path: '/musician/:musician_slug' });
 });
 
