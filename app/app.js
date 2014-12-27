@@ -8,8 +8,7 @@ Ember.MODEL_FACTORY_INJECTIONS = true;
 var App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver: Resolver,
-  apiPath: 'http://bandaid-api.com'
+  Resolver: Resolver
 });
 
 App.Constant = Ember.Object.extend({
@@ -28,6 +27,7 @@ App.initializer({
     application.inject('controller', 'const', 'constants:main');
     application.inject('view', 'const', 'constants:main');
     application.inject('model', 'const', 'constants:main');
+    application.inject('adapter', 'const', 'constants:main');
     application.inject('route', 'const', 'constants:main');
   }
 });
