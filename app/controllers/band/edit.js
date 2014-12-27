@@ -1,6 +1,11 @@
 import Ember from 'ember';
 export default Ember.ObjectController.extend({
     needs: ['band'],
+    allGenres: function(){
+        var genres = this.store.find('genre');
+        return genres;
+        //this.get("controllers.application").findAllGenres();
+    }.property('model'),
     actions: {
         bandSave: function(){
             var band = this.get('model');

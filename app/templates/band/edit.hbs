@@ -4,6 +4,14 @@
 
 <label>Description</label>
 {{textarea value=description}}
+    {{ember-selectize
+        content=this.allGenres
+        optionValuePath="id"
+        optionLabelPath="name"
+        selection=genres
+        multiple=true
+        placeholder="Select an item"
+    }}
 
 </div>
 <button {{action "bandSave"}}> ok </button>
