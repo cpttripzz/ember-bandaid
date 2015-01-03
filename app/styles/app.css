@@ -1164,3 +1164,7 @@ div#divNewDocument {
 .btn-youtube.active {
   background-color: #3e0309 \9;
 }
+.map-canvas {
+  width: 800px;
+  height: 600px;
+}

@@ -14,7 +14,32 @@ var App = Ember.Application.extend({
 App.Constant = Ember.Object.extend({
     path: 'http://bandaid-api.com'
 });
+App.Geo= Ember.Object.extend({
+      longitude: null,
+      latitude: null
+});
 
+App.initializer({
+  name: 'geo',
+  initialize: function(container, application) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      App.Geo.latitude = position.coords.latitude;
+      App.Geo.longitude = position.coords.longitude;
+    });
+
+    application.register('geocoords:main', App.Geo, {
+      singleton: true,
+      instantiate: true
+    });
+
+    application.inject('controller', 'geo', 'geocoords:main');
+    application.inject('component', 'geo', 'geocoords:main');
+    application.inject('view', 'geo', 'geocoords:main');
+    application.inject('model', 'geo', 'geocoords:main');
+    application.inject('adapter', 'geo', 'geocoords:main');
+    application.inject('route', 'geo', 'geocoords:main');
+  }
+});
 
 App.initializer({
   name: 'const',

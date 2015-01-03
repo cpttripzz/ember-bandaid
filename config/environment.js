@@ -14,11 +14,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' bandaid-api.com maxcdn.bootstrapcdn.com ",
-      'font-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com ",
-      'connect-src': "'self' 'unsafe-inline' bandaid-api.com ",
-      'img-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com",
-      'style-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' bandaid-api.com maxcdn.bootstrapcdn.com maps.gstatic.com maps.googleapis.com",
+      'font-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com maps.gstatic.com",
+      'connect-src': "'self' 'unsafe-inline' bandaid-api.com maps.gstatic.com maps.googleapis.com",
+      'img-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com maps.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' bandaid-api.com maxcdn.bootstrapcdn.com maps.gstatic.com",
       'report-uri': "'test"
     },
 

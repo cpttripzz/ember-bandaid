@@ -34,6 +34,7 @@
     "ember-cli-simple-auth": "~0.7.1",
     "ember-cli-font-awesome": "0.0.4",
     "ember-cli-pagination": "~0.5.2",
-    "ember-cli-selectize": "0.0.6"
+    "ember-cli-selectize": "0.0.6",
+    "ember-localstorage-adapter": "~0.5.0"
   }
 }
